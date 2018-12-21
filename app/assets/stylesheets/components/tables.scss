@@ -1,0 +1,32 @@
+﻿@import "../Base/_global.scss";
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    margin: 2rem 0;
+    background-color: transparent;
+
+    th, td {
+        padding: .75rem;
+        vertical-align: middle;
+        border-top: 1px solid $color-border;
+    }
+
+    thead {
+        th {
+            vertical-align: bottom;
+            border-bottom: 2px solid $color-border;
+        }
+    }
+
+    tbody {
+        tr:nth-of-type(odd) {
+            background-color:rgba(0,0,0,.05);
+        }
+        td {
+            height: 5.5rem;
+        }
+    }
+}
+

@@ -1,0 +1,41 @@
+﻿//colors
+$color-white: #fff;
+$color-black: #000;
+$color-transparent: rgba(255, 255, 255, 0);
+$color-primary: #4A90E2;
+$color-secondary: #2E5b90;
+$color-background: #f4f4f4;
+$color-border: #dee2e6;
+$color-bg: #ECECEC;
+$color-section-bg: #f7fafe;
+$color-font: $color-black;
+$color-font-lighten: #8c8c8c;
+$color-bg-disabled: #d6d6d6;
+$color-font-disabled: #969696;
+
+// Font family
+$font-text: 'Open Sans', sans-serif;
+$font-title: 'Roboto', sans-serif;
+$font-regular: 'Roboto', sans-serif;
+$font-awesome: 'font-awesome';
+
+// Font sizes
+$font-size-xs: 1rem;
+$font-size-s: 1.3rem;
+$font-size-base: 1.6rem;
+$font-size-m: 2.2rem;
+$font-size-l: 3.2rem;
+$font-size-xl: 4.5rem;
+$font-size-xxl: 6.4rem;
+
+// Helpfull variables
+$transition-time: .3s;
+$letter-spacing: .1rem;
+$navigation-height: 5rem;
+
+// All devices width for responsivity
+$width-mobile: 480px;
+$width-tablet: 768px;
+$width-desktop: 980px;
+$width-desktop-large: 1200px;
+$width-desktop-HD: 1440px;

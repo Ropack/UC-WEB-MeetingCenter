@@ -1,0 +1,67 @@
+<div class="container">
+
+  <section>
+    <div class="aside-layout">
+      <div class="aside-layout-content">
+        <h1><%= @rooms.first.building.title %></h1>
+        <p>Popis Vyčíslená většina cípu začal zní subtropy nerozčiluje. Počet říjnovém ji plní pojmy i vrchol, světa
+          zaznamenány pásu, svá co tam satisfakce moderního bezplatné zradit kulturních do nejteplejším svahy úkazu
+          rozlehlý mapuje, obeplutí, kaple vyprávějí jde. Společenské císařský ji e-mail povely čti vedený, skupinu
+          překážka z likviduje, z což odkoupit, módní sloní varování přednášíme viditelný menší i své zúročovat zkoumá
+          soustavu obavy tj. rozběhla vejcích. Je zvyšují půjdu slona král pobírají. Mířil týkaly, vzniká, kotel po a
+          vztahu mediálně nevratné přepravy sdružení z zatím zevrubně publikujeme obejdete, za o kůže nový moři kuliček
+          vyhyne terčem, žádné pomáhá to lyžaři živé. </p>
+      </div>
+      <aside class="address">
+        <h4>Adresa</h4>
+        <address>
+          <strong>Unicorn College s.r.o.</strong><br/>
+          V Kapslovně 2767/2<br/>
+          130 00 Praha 3<br/>
+          <br/>
+          Tel.: (+420) 271 097 111<br/>
+          Fax: (+420) 221 400 114<br/>
+          <br/>
+          info@unicorncollege.cz<br/>
+          www.unicorncollege.cz<br/>
+          <br/>
+          IČ: 27169511<br/>
+          DIČ: CZ699004029
+        </address>
+      </aside>
+    </div>
+    <a href="today.html" role="button" class="button"><span class="fa fa-calendar-alt"></span>Zobrazit denní rozvrh</a>
+  </section>
+
+  <section class="rooms">
+    <table>
+      <thead>
+      <tr>
+        <th>Název místnosti</th>
+        <th>Aktuální obsazenost</th>
+        <th></th>
+      </tr>
+      </thead>
+    </table>
+    <% @rooms.each do |room| %>
+      <h4>Přízemí</h4>
+      <table>
+        <tbody>
+        <tr>
+          <td><%= room.code %> - <%= room.title %> </td>
+          <td class="occupied">Obsazená</td>
+          <td>
+            <%= link_to building_room_path(room.building, room), class: "button" do %>
+              <span class="fa fa-clipboard-list"></span>Zobrazit rozvrh místnosti
+            <% end %>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    <% end %>
+
+  </section>
+</div>
+
+<br>
+

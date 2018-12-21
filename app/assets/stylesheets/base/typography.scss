@@ -1,0 +1,75 @@
+﻿@import "../Base/_global.scss";
+
+span, p, strong, a, label {
+    font-size: 1.4rem;
+    line-height: 2rem;
+}
+
+h1 {
+    font-size: $font-size-xxl;
+    font-family: $font-title;
+    font-weight: 300;
+    letter-spacing: $letter-spacing;
+
+    @include res-max-mobile {
+        font-size: $font-size-l;
+    }
+}
+
+h2 {
+    font-size: 3.2rem;
+    font-family: $font-title;
+    font-weight: 300;
+    letter-spacing: $letter-spacing;
+
+    @include res-max-mobile {
+        font-size: $font-size-m;
+        font-weight: 400;
+    }
+}
+
+h3 {
+    font-size: 2.2rem;
+    font-family: $font-title;
+    font-weight: 300;
+    letter-spacing: $letter-spacing;
+}
+
+h4 {
+    font-size: $font-size-m;
+    font-family: $font-title;
+    font-weight: 300;
+    letter-spacing: $letter-spacing;
+
+    @include res-max-mobile {
+        font-size:1.8rem;
+    }
+}
+
+h5 {
+    font-size: $font-size-base;
+    font-family: $font-title;
+    font-weight: 300;
+    letter-spacing: $letter-spacing;
+}
+
+h6 {
+    font-size: $font-size-xs;
+    font-family: $font-title;
+    font-weight: 300;
+    letter-spacing: $letter-spacing;
+}
+
+.fa, .far, .fas, .fal {
+    font-family: $font-awesome;
+    font-weight: 300;
+    font-size: $font-size-m;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    padding-right: 0.5rem;
+}

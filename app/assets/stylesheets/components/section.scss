@@ -1,0 +1,10 @@
+﻿@import "../Base/_global.scss";
+
+section {
+    padding: 2rem 0 5rem 0;
+
+    @include res-max-desktop-small {
+        padding: 3rem 0;
+    }
+}
+

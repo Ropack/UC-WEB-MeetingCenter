@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<section class="section-home">
+
+  <h1 class="main-title">Meeting Center</h1>
+</section>
+<section class="buildings">
+
+  <% @buildings.each do |building| %>
+    <%= link_to building_rooms_path(building), { :class => "building-item" } do%>
+      <div>
+        <div class="building-img">
+          <%= image_tag "building1.jpg" %>
+        </div>
+        <div class="description">
+          <h3><%= building.code %></h3>
+          <p><%= building.title %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</section>

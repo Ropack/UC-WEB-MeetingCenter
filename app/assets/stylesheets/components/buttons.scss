@@ -1,0 +1,30 @@
+﻿@import "../Base/_global.scss";
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    background-color: $color-primary;
+    color: $color-white;
+    padding: 6px 12px;
+    border: 1px solid $color-primary;
+    cursor: pointer;
+    font-weight: 600;
+    -webkit-transition: background-color $transition-time linear;
+    -moz-transition: background-color $transition-time linear;
+    transition: background-color $transition-time linear;
+
+    &:hover {
+        text-decoration: none;
+        background-color: $color-secondary;
+    }
+
+    &.button-secondary {
+        background-color: $color-white;
+        color: $color-primary;
+
+        &:hover {
+            background-color: $color-primary;
+            color: $color-white;
+        }
+    }
+}

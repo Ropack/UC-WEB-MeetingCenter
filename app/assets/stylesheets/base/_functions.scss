@@ -1,0 +1,11 @@
+﻿
+// Detect if color is dark or light and return proper color on hover effect
+// Percentage can be used to set
+@function get-hover-color($color, $percentage) {
+    @if (lightness($color) > 20) {
+        @return darken($color, $percentage); // Lighter backgorund, return dark color
+    }
+    @else {
+        @return lighten($color, $percentage); // Darker background, return light color
+    }
+}

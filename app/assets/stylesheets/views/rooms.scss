@@ -1,0 +1,16 @@
+@import "../Base/_global.scss";
+
+.rooms {
+    table {
+        margin: 0 0 2rem 0;
+    }
+    th, td {
+        width: 33.33%;
+    }
+    td>a {
+        float: right;
+    }
+    h4 {
+        padding-left: 1rem;
+    }
+}

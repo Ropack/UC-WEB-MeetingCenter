@@ -1,0 +1,25 @@
+@import "../Base/_global.scss";
+
+.section-contact {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .image {
+        max-width: 70%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    @include res-max-tablet {
+        .image {
+            max-width: initial;
+        }
+
+        div {
+            width: 100%;
+        }
+    }
+}
