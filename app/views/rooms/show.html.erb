@@ -1,4 +1,130 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_room_path(@room) %> |
-<%= link_to 'Back', rooms_path %>
+<div class="container">
+  <h1><%= @room.code %> - <%= @room.title %></h1>
+  <table class="schedule">
+    <thead>
+    <tr>
+      <th>Den</th>
+      <th>8:00 - 9:30</th>
+      <th>9:30 - 11:00</th>
+      <th>11:00 - 12:30</th>
+      <th>12:30 - 14:00</th>
+      <th>14:00 - 15:30</th>
+      <th>15:30 - 17:00</th>
+      <th>17:00 - 18:30</th>
+      <th>18:30 - 20:00</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th>Pondělí</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Úterý</th>
+      <td>
+        <p>ORA-P</p>
+        <p>Karel Přech</p>
+      </td>
+      <td></td>
+      <td>
+        <p>WEB-P</p>
+        <p>Tomáš Jukin</p>
+      </td>
+      <td>
+        <p>WEB-S</p>
+        <p>Tomáš Jukin</p>
+      </td>
+      <td>
+        <p>ORA-P</p>
+        <p>Josef Jaroš</p>
+      </td>
+      <td></td>
+      <td>
+        <p>CSP-P</p>
+        <p>Pavel Bory</p>
+      </td>
+      <td>
+        <p>CSP-S</p>
+        <p>Pavel Bory</p>
+      </td>
+    </tr>
+    <tr>
+      <th>Středa</th>
+      <td></td>
+      <td>
+        <p>OAD-P</p>
+        <p>Peter Buchlák</p>
+      </td>
+      <td>
+        <p>OAD-P</p>
+        <p>Peter Buchlák</p>
+      </td>
+      <td></td>
+      <td>
+        <p>MAE-P</p>
+        <p>Jan Čadil</p>
+      </td>
+      <td>
+        <p>MAE-S</p>
+        <p>Jan Čadil</p>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Čtvrtek</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Pátek</th>
+      <td></td>
+      <td></td>
+      <td>
+        <p>EN3</p>
+        <p>Elena Johnson</p>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Sobota</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Neděle</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admin Buildings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_buildings.each do |admin_building| %>
+      <tr>
+        <td><%= admin_building.code %> - <%= admin_building.title %></td>
+        <td><%= link_to 'Show', [:admin, admin_building] %></td>
+        <td><%= link_to 'Edit', edit_admin_building_path(admin_building) %></td>
+        <td><%= link_to 'Destroy', [:admin, admin_building], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Admin Building', new_admin_building_path %>
