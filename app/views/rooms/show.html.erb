@@ -1,4 +1,7 @@
 <div class="container">
+  <%= link_to building_rooms_path(@room.building), class: 'button button-secondary' do %>
+    <span class="fa fa-arrow-left"></span>Zpět na seznam místností
+  <% end %>
   <h1><%= @room.code %> - <%= @room.title %></h1>
   <table class="schedule">
     <thead>

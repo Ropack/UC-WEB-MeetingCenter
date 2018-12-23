@@ -15,3 +15,15 @@
         content: '\f060';
     }
 }
+
+.fa-edit {
+  &:before {
+    content: '\f044';
+  }
+}
+
+.fa-plus {
+  &:before {
+    content: '\f067';
+  }
+}

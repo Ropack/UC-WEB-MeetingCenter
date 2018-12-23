@@ -1,4 +1,9 @@
-<h1>New Admin Room</h1>
+<div class="container">
+  <%= link_to [:admin, @admin_room.building], class: 'button button-secondary' do %>
+    <span class="fa fa-arrow-left"></span>Back
+  <% end %>
+<h1>New Room</h1>
 
 <%= render 'form', admin_room: @admin_room %>
 
+</div>

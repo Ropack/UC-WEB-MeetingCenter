@@ -1,26 +1,34 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <%= link_to admin_dashboard_index_path, class: 'button button-secondary' do %>
+    <span class="fa fa-arrow-left"></span>Back to dashboard
+  <% end %>
 
-<h1>Admin Buildings</h1>
-
-<table>
-  <thead>
+  <p id="notice"><%= notice %></p>
+  <%= link_to new_admin_building_path, class: 'button button-primary right' do %>
+    <span class="fa fa-plus"></span>New Building
+  <% end %>
+  <h1>Buildings</h1>
+  <% if @admin_buildings.any? %>
+  <table>
+    <thead>
     <tr>
-      <th colspan="4"></th>
+      <th>Code - Title</th>
+      <th colspan="3"></th>
     </tr>
-  </thead>
+    </thead>
 
-  <tbody>
+    <tbody>
     <% @admin_buildings.each do |admin_building| %>
       <tr>
-        <td><%= admin_building.code %> - <%= admin_building.title %></td>
+        <td><%= admin_building.full_name %></td>
         <td><%= link_to 'Show', [:admin, admin_building] %></td>
         <td><%= link_to 'Edit', edit_admin_building_path(admin_building) %></td>
-        <td><%= link_to 'Destroy', [:admin, admin_building], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', [:admin, admin_building], method: :delete, data: {confirm: 'Are you sure?'} %></td>
       </tr>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Admin Building', new_admin_building_path %>
+    </tbody>
+  </table>
+  <% else %>
+  Meeting center doesn't contain any building yet. <%= link_to 'Add one here!', new_admin_building_path %>
+  <% end %>
+</div>

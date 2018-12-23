@@ -1,0 +1,47 @@
+<div class="container">
+  <%= link_to building_rooms_path(@building), class: 'button button-secondary' do %>
+    <span class="fa fa-arrow-left"></span>Zpět na seznam místností
+  <% end %>
+  <section>
+    <h1>Rozvrh - <%= Time.now.to_date %></h1>
+    <h3><%= @building.full_name %></h3>
+    <% if @today_lessons.any? %>
+    <table class="today-timetable">
+      <thead>
+      <tr>
+        <th>Čas</th>
+        <th>Předmět</th>
+        <th>Místnost</th>
+        <th>Vyučující</th>
+        <th>Počet studentů</th>
+        <th>Průběh</th>
+      </tr>
+      </thead>
+      <tbody>
+    <% @today_lessons.each do |lesson| %>
+
+        <tr>
+          <td><%= lesson.start_at.strftime("%R") %> - <%= lesson.end_at.strftime("%R") %></td>
+          <td>
+            <p><%= lesson.course.code %></p>
+            <p><%= lesson.course.title %></p>
+          </td>
+          <td><%= lesson.room.code %></td>
+          <td><%= lesson.teacher.full_name %></td>
+          <td><%= lesson.course.students.count %></td>
+          <td>
+            <div class="progress">
+              <div class="progress-bar" style="width: <%= lesson.progress %>%"></div>
+            </div>
+          </td>
+        </tr>
+    <% end %>
+
+      </tbody>
+    </table>
+
+    <% else %>
+      There are no lessons in this building today.
+    <%end %>
+  </section>
+</div>

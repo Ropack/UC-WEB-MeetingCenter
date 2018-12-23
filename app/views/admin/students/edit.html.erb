@@ -1,0 +1,10 @@
+<div class="container">
+  <%= link_to admin_students_path, class: 'button button-secondary' do %>
+    <span class="fa fa-arrow-left"></span>Back
+  <% end %>
+<h1>Editing Student</h1>
+
+<%= render 'form', admin_student: @admin_student %>
+
+<%= link_to 'Show', [:admin, @admin_student] %>
+</div>

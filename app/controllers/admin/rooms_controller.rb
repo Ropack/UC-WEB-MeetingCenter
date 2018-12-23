@@ -1,9 +1,13 @@
 class Admin::RoomsController < Admin::AdminController
-  before_action :set_admin_room, only: [:edit, :update, :destroy]
+  before_action :set_admin_room, only: [:show, :edit, :update, :destroy]
 
   # GET /admin/rooms/new
   def new
     @admin_room = Room.new(building_id: params[:building_id])
+  end
+
+  def show
+
   end
 
   # GET /admin/rooms/1/edit

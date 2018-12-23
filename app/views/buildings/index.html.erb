@@ -5,7 +5,7 @@
   <h1 class="main-title">Meeting Center</h1>
 </section>
 <section class="buildings">
-
+  <% if @buildings.any? %>
   <% @buildings.each do |building| %>
     <%= link_to building_rooms_path(building), { :class => "building-item" } do%>
       <div>
@@ -19,4 +19,7 @@
       </div>
     <% end %>
   <% end %>
+    <% else %>
+    Meeting center doesn't contain any building yet. It will be added soon for sure.
+  <%end %>
 </section>

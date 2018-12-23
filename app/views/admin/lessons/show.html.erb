@@ -1,0 +1,41 @@
+<div class="container">
+  <%= link_to [:admin, @admin_lesson.course], class: 'button button-secondary' do %>
+    <span class="fa fa-arrow-left"></span>Back
+  <% end %>
+<p id="notice"><%= notice %></p>
+  <%= link_to edit_admin_course_lesson_path(@admin_lesson), class: 'button button-primary right' do %>
+    <span class="fa fa-edit"></span>Edit
+  <% end %>
+  <h1>Lesson detail</h1>
+  <p>Starts at: <%= @admin_lesson.start_at %></p>
+  <p>Ends at: <%= @admin_lesson.end_at %></p>
+  <p>Room: <%= @admin_lesson.room.title %></p>
+  <p>Teacher: <%= @admin_lesson.teacher.full_name %></p>
+
+  <section>
+    <h2>Students</h2>
+    <% if @admin_lesson.course.students.any? %>
+    <table>
+      <thead>
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th colspan="2"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @admin_lesson.course.students.each do |student| %>
+        <tr>
+          <td><%= student.first_name %></td>
+          <td><%= student.last_name %></td>
+          <td><%= link_to 'Show', [:admin, student] %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+    <% else %>
+      There are no students assigned on this lesson.
+    <% end %>
+  </section>
+
+</div>

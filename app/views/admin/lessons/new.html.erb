@@ -1,0 +1,8 @@
+<div class="container">
+  <%= link_to [:admin, @admin_lesson.course], class: 'button button-secondary' do %>
+    <span class="fa fa-arrow-left"></span>Back
+  <% end %>
+<h1>New Lesson</h1>
+
+<%= render 'form', admin_lesson: @admin_lesson %>
+</div>

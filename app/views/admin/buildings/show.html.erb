@@ -1,27 +1,34 @@
-<p id="notice"><%= notice %></p>
-
-<h1><%= @admin_building.title %> </h1>
-
-<table>
-  <thead>
-  <tr>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <% @admin_building.rooms.each do |room| %>
-    <tr>
-      <td><%= room.code %> - <%= room.title %></td>
-      <td><%= link_to 'Edit', edit_admin_building_room_path(room.building, room) %></td>
-      <td><%= link_to 'Destroy', [:admin, room.building, room], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
+<div class="container">
+  <%= link_to admin_buildings_path, class: 'button button-secondary' do %>
+    <span class="fa fa-arrow-left"></span>Back
   <% end %>
-  </tbody>
-</table>
+  <p id="notice"><%= notice %></p>
+  <%= link_to new_admin_building_room_path(@admin_building), class: 'button button-primary right' do %>
+    <span class="fa fa-plus"></span>New Room
+  <% end %>
+  <h1><%= @admin_building.title %> </h1>
 
-<br>
+  <% if @admin_building.rooms.any? %>
+  <table>
+    <thead>
+    <tr>
+      <th>Code - Title</th>
+      <th colspan="3"></th>
+    </tr>
+    </thead>
 
-<%= link_to 'New Room', new_admin_building_room_path(@admin_building) %>
-
-<%= link_to 'Back', admin_buildings_path %>
+    <tbody>
+    <% @admin_building.rooms.each do |room| %>
+      <tr>
+        <td><%= room.code %> - <%= room.title %></td>
+        <td><%= link_to 'Show', [:admin, room.building, room] %></td>
+        <td><%= link_to 'Edit', edit_admin_building_room_path(room.building, room) %></td>
+        <td><%= link_to 'Destroy', [:admin, room.building, room], method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <% else %>
+    This building doesn't contain any room yet. <%= link_to 'Add one here!', new_admin_building_room_path(@admin_building)%>
+  <% end %>
+</div>

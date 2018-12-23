@@ -1,9 +1,11 @@
 <div class="container">
-
+  <%= link_to buildings_path, class: 'button button-secondary' do %>
+    <span class="fa fa-arrow-left"></span>Zpět na seznam budov
+  <% end %>
   <section>
     <div class="aside-layout">
       <div class="aside-layout-content">
-        <h1><%= @rooms.first.building.title %></h1>
+        <h1><%= @building.title %></h1>
         <p>Popis Vyčíslená většina cípu začal zní subtropy nerozčiluje. Počet říjnovém ji plní pojmy i vrchol, světa
           zaznamenány pásu, svá co tam satisfakce moderního bezplatné zradit kulturních do nejteplejším svahy úkazu
           rozlehlý mapuje, obeplutí, kaple vyprávějí jde. Společenské císařský ji e-mail povely čti vedený, skupinu
@@ -30,15 +32,17 @@
         </address>
       </aside>
     </div>
-    <a href="today.html" role="button" class="button"><span class="fa fa-calendar-alt"></span>Zobrazit denní rozvrh</a>
+    <%= link_to @building, class: "button" do %>
+      <span class="fa fa-calendar-alt"></span>Zobrazit denní rozvrh
+    <% end %>
   </section>
 
   <section class="rooms">
+    <% if @rooms.any? %>
     <table>
       <thead>
       <tr>
         <th>Název místnosti</th>
-        <th>Aktuální obsazenost</th>
         <th></th>
       </tr>
       </thead>
@@ -48,8 +52,7 @@
       <table>
         <tbody>
         <tr>
-          <td><%= room.code %> - <%= room.title %> </td>
-          <td class="occupied">Obsazená</td>
+          <td><%= room.full_name %></td>
           <td>
             <%= link_to building_room_path(room.building, room), class: "button" do %>
               <span class="fa fa-clipboard-list"></span>Zobrazit rozvrh místnosti
@@ -59,6 +62,9 @@
         </tbody>
       </table>
     <% end %>
+    <% else %>
+      This building doesn't contain any room yet.
+    <%end %>
 
   </section>
 </div>

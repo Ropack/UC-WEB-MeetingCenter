@@ -1,0 +1,38 @@
+<div class="container">
+<%= link_to admin_dashboard_index_path, class: 'button button-secondary' do %>
+  <span class="fa fa-arrow-left"></span>Back to dashboard
+<% end %>
+
+<p id="notice"><%= notice %></p>
+  <%= link_to new_admin_teacher_path, class: 'button button-primary right' do %>
+    <span class="fa fa-plus"></span>New Teacher
+  <% end %>
+
+<h1>Teachers</h1>
+
+  <% if @admin_teachers.any? %>
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_teachers.each do |admin_teacher| %>
+      <tr>
+        <td><%= admin_teacher.first_name %> <%= admin_teacher.last_name %></td>
+        <td><%= admin_teacher.email %></td>
+        <td><%= link_to 'Show', [:admin, admin_teacher] %></td>
+        <td><%= link_to 'Edit', edit_admin_teacher_path(admin_teacher) %></td>
+        <td><%= link_to 'Destroy', [:admin, admin_teacher], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+  <% else %>
+  There are no teachers registered yet. <%= link_to 'Create first one here!', new_admin_teacher_path%>
+  <% end %>
+</div>

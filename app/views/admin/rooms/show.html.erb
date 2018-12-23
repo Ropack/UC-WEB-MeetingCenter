@@ -1,4 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_admin_room_path(@admin_room) %> |
-<%= link_to 'Back', admin_rooms_path %>
+<div class="container">
+  <%= link_to [:admin, @admin_room.building], class: 'button button-secondary' do %>
+    <span class="fa fa-arrow-left"></span>Back
+  <% end %>
+  <p id="notice"><%= notice %></p>
+  <h1>Room detail</h1>
+  <p>Code: <%= @admin_room.code %></p>
+  <p>Title: <%= @admin_room.title %></p>
+  <p>Building: <%= @admin_room.building.full_name %></p>
+  <%= link_to edit_admin_building_room_path(@admin_room), class: 'button button-primary' do %>
+    <span class="fa fa-edit"></span>Edit
+  <% end %>
+</div>

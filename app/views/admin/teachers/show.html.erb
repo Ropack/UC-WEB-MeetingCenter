@@ -1,0 +1,12 @@
+<div class="container">
+  <%= link_to admin_teachers_path, class: 'button button-secondary' do %>
+    <span class="fa fa-arrow-left"></span>Back
+  <% end %>
+  <p id="notice"><%= notice %></p>
+  <h1>Teacher detail</h1>
+  <p>Name: <%= @admin_teacher.first_name %> <%= @admin_teacher.last_name %></p>
+  <p>Email: <%= @admin_teacher.email %></p>
+  <%= link_to edit_admin_teacher_path(@admin_teacher), class: 'button button-primary' do %>
+    <span class="fa fa-edit"></span>Edit
+  <% end %>
+</div>
